@@ -92,7 +92,7 @@ const drawFromClassArr = (selectedArr, targetObj) => {
     const h2 = document.createElement("h2");
     const h5 = document.createElement("h5");
     h2.textContent = country.name;
-    h5.textContent = country.region;
+    h5.textContent = country.region.toUpperCase();
     header.append(h2, h5);
 
     const main = document.createElement("main");
