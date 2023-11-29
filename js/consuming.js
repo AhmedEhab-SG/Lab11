@@ -9,10 +9,22 @@ const page = document.querySelector(".page");
 
 /*--------------------------------------------------------*/
 
-const countryName = getCountry();
+// fetchCountryAndNeigbour(countryName)
+//   .then((response) => pushDataToClass(response))
+//   .then((ClassesArr) => drawFromClassArr(ClassesArr, page));
 
-fetchCountryAndNeigbour(countryName)
-  .then((response) => pushDataToClass(response))
-  .then((ClassesArr) => drawFromClassArr(ClassesArr, page));
+// callback Hell???
 
-  // callback Hell???
+/*------------------------------------------------------------*/
+
+const consuming = async () => {
+  const countryName = getCountry();
+
+  const fetchedDate = await fetchCountryAndNeigbour(countryName);
+
+  const countryArr = pushDataToClass(fetchedDate);
+
+  drawFromClassArr(countryArr, page);
+};
+
+consuming();
