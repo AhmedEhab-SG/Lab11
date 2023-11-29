@@ -52,10 +52,10 @@ async function fetchCountryAndNeigbour(countryName) {
 
 /*-----------------------------------------------------------*/
 
-const drawCountryAndNeigbour = ({ countryData, neighbourData }, targetObj) => {
-  let countries = [];
+const selectedFetchedData = ({ countryData, neighbourData }) => {
+  let selectedData = [];
 
-  countries.push(
+  selectedData.push(
     new Country(
       countryData[0].flag,
       countryData[0].name,
@@ -74,7 +74,13 @@ const drawCountryAndNeigbour = ({ countryData, neighbourData }, targetObj) => {
     )
   );
 
-  countries.map((country) => {
+  return selectedData;
+};
+
+/*--------------------------------------------------------*/
+
+const drawFromClassArr = (selectedArr, targetObj) => {
+  selectedArr.map((country) => {
     const container = document.createElement("div");
     container.classList.add("container");
     targetObj.append(container);
@@ -124,4 +130,9 @@ const drawCountryAndNeigbour = ({ countryData, neighbourData }, targetObj) => {
   });
 };
 
-export { getCountry, drawCountryAndNeigbour, fetchCountryAndNeigbour };
+export {
+  getCountry,
+  selectedFetchedData,
+  fetchCountryAndNeigbour,
+  drawFromClassArr,
+};
