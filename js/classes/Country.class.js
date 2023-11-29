@@ -10,19 +10,13 @@ export class Country {
   }
 
   get populationInMil() {
-    const numberString = this.population.toString();
-    let formattedNumber = "";
-
-    if (numberString.length > 3) {
-      formattedNumber = `${numberString.substring(
-        0,
-        3
-      )}.${numberString.substring(3, 4)} M People`;
+    if (this.population.toString().length > 3) {
+      return `${this.population.toString().substring(0, 3)}.${this.population
+        .toString()
+        .substring(3, 4)} M People`;
     } else {
-      formattedNumber = `${numberString} People`;
+      return `${this.population} People`;
     }
-
-    return formattedNumber;
   }
 
   get count() {
