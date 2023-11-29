@@ -52,7 +52,7 @@ async function fetchCountryAndNeigbour(countryName) {
 
 /*-----------------------------------------------------------*/
 
-const drawCountries = ({ countryData, neighbourData }, targetObj) => {
+const drawCountryAndNeigbour = ({ countryData, neighbourData }, targetObj) => {
   let countries = [];
 
   countries.push(
@@ -124,4 +124,4 @@ const drawCountries = ({ countryData, neighbourData }, targetObj) => {
   });
 };
 
-export { getCountry, drawCountries, fetchCountryAndNeigbour };
+export { getCountry, drawCountryAndNeigbour, fetchCountryAndNeigbour };
