@@ -6,4 +6,4 @@ const page = document.querySelector(".page");
 
 const countryName = getCountry();
 
-fetchData(countryName).then((countryArr) => drawCountries(countryArr, page));
+fetchData(countryName).then((response) => drawCountries(response, page));

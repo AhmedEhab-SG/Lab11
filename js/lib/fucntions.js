@@ -33,8 +33,6 @@ const getCountry = function () {
 /*----------------------------------------------------------*/
 
 async function fetchData(countryName) {
-  let countries = [];
-
   try {
     const response = await fetch(
       `https://restcountries.com/v2/name/${countryName}`
@@ -46,36 +44,37 @@ async function fetchData(countryName) {
     );
 
     const neighbourData = await neighbourResponse.json();
-
-    countries.push(
-      new Country(
-        countryData[0].flag,
-        countryData[0].name,
-        countryData[0].region,
-        countryData[0].population,
-        countryData[0].languages[0].name,
-        countryData[0].currencies[0].name
-      ),
-      new Country(
-        neighbourData.flag,
-        neighbourData.name,
-        neighbourData.region,
-        neighbourData.population,
-        neighbourData.languages[0].name,
-        neighbourData.currencies[0].name
-      )
-    );
+    return { countryData, neighbourData };
   } catch (error) {
     throw new Error("something went wrong");
   }
-
-  return countries;
 }
 
 /*-----------------------------------------------------------*/
 
-const drawCountries = (countriesArr, targetObj) => {
-  countriesArr.map((country) => {
+const drawCountries = ({ countryData, neighbourData }, targetObj) => {
+  let countries = [];
+
+  countries.push(
+    new Country(
+      countryData[0].flag,
+      countryData[0].name,
+      countryData[0].region,
+      countryData[0].population,
+      countryData[0].languages[0].name,
+      countryData[0].currencies[0].name
+    ),
+    new Country(
+      neighbourData.flag,
+      neighbourData.name,
+      neighbourData.region,
+      neighbourData.population,
+      neighbourData.languages[0].name,
+      neighbourData.currencies[0].name
+    )
+  );
+
+  countries.map((country) => {
     const container = document.createElement("div");
     container.classList.add("container");
     targetObj.append(container);
