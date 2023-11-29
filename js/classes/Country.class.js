@@ -14,9 +14,10 @@ export class Country {
     let formattedNumber = "";
 
     if (numberString.length > 3) {
-      formattedNumber = `${numberString.substring(0, 3)}.${numberString.indexOf(
+      formattedNumber = `${numberString.substring(
+        0,
         3
-      )} M People`;
+      )}.${numberString.substring(3, 4)} M People`;
     } else {
       formattedNumber = `${numberString} People`;
     }

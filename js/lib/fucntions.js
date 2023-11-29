@@ -2,7 +2,7 @@ import { Country } from "../classes/Country.class.js";
 
 const pascalCase = (fullString, msg) => {
   if (typeof fullString !== "string") {
-    throw new Error(`please enter a vaild ${msg} !`);
+    throw new Error(`please enter a vaild ${msg}!`);
   }
 
   let splitedString = fullString.toLowerCase().split(" ");
@@ -23,9 +23,9 @@ const pascalCase = (fullString, msg) => {
 /*---------------------------------------------------------*/
 
 const getCountry = function () {
-  const mainCountry = prompt("please enter the Country name !");
+  const mainCountry = prompt("please enter the country name!");
 
-  const pascaleCountry = pascalCase(mainCountry);
+  const pascaleCountry = pascalCase(mainCountry, "country name");
 
   return pascaleCountry;
 };
