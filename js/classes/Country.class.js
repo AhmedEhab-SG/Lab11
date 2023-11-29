@@ -15,7 +15,7 @@ export class Country {
         .toString()
         .substring(3, 4)} M People`;
     } else {
-      return `${this.population} People`;
+      return `${this.population} M People`;
     }
   }
 
