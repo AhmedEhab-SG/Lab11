@@ -55,7 +55,7 @@ async function fetchCountryAndNeigbour(countryName) {
 const pushDataToClass = ({ countryData, neighbourData }) => {
   let classerArr = [];
 
-  selectedData.push(
+  classerArr.push(
     new Country(
       countryData[0].flag,
       countryData[0].name,
