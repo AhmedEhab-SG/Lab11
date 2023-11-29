@@ -52,8 +52,8 @@ async function fetchCountryAndNeigbour(countryName) {
 
 /*-----------------------------------------------------------*/
 
-const selectedFetchedData = ({ countryData, neighbourData }) => {
-  let selectedData = [];
+const pushDataToClass = ({ countryData, neighbourData }) => {
+  let classerArr = [];
 
   selectedData.push(
     new Country(
@@ -74,7 +74,7 @@ const selectedFetchedData = ({ countryData, neighbourData }) => {
     )
   );
 
-  return selectedData;
+  return classerArr;
 };
 
 /*--------------------------------------------------------*/
@@ -132,7 +132,7 @@ const drawFromClassArr = (selectedArr, targetObj) => {
 
 export {
   getCountry,
-  selectedFetchedData,
+  pushDataToClass,
   fetchCountryAndNeigbour,
   drawFromClassArr,
 };
