@@ -14,3 +14,5 @@ const countryName = getCountry();
 fetchCountryAndNeigbour(countryName)
   .then((response) => pushDataToClass(response))
   .then((ClassesArr) => drawFromClassArr(ClassesArr, page));
+
+  // callback Hell???
