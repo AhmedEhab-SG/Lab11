@@ -7,6 +7,7 @@ export class Country {
     this.population = population;
     this.lang = lang;
     this.curr = curr;
+    Country.#count++;
   }
 
   get populationInMil() {
@@ -19,7 +20,7 @@ export class Country {
     }
   }
 
-  get count() {
+  static get count() {
     return this.#count;
   }
 }
